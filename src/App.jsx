@@ -1,8 +1,9 @@
 import React from "react";
-import Estados from "./estados/Estados";
+import Card from "./card/Card";
+import Efectos from "./efectos/Efectos";
 
 const App = () => {
-  return <Estados />;
+  return <Card />;
 };
 
 export default App;

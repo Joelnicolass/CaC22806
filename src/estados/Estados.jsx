@@ -4,7 +4,7 @@ const Estados = () => {
   /* 
         const [estado, cambiarEstado] = useState(valorInicial)
     */
-  const [nombre, setNombre] = useState("");
+  const [nombre, setNombre] = useState();
 
   const clickHandler = () => {
     setNombre("");
