@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 
 const usuario = {
   nombre: "Naomi",
@@ -6,38 +7,27 @@ const usuario = {
   edad: "20",
 };
 
+const usuarioClaves = Object.keys(usuario);
+let indice = 0;
+
 const Card = () => {
-  const [texto, setTexto] = useState();
-  const [contador, setContador] = useState(0);
+  const [texto, setTexto] = useState(usuario[usuarioClaves[indice]]);
 
   const cambiarDatos = () => {
-    setContador(contador + 1);
-
-    if (contador == 3) {
-      setContador(0);
-      return;
-    }
-
-    if (contador == 0) {
-      setTexto(usuario.nombre);
-      return;
-    }
-
-    if (contador == 1) {
-      setTexto(usuario.apellido);
-      return;
-    }
-
-    if (contador == 2) {
-      setTexto(usuario.edad);
-      return;
-    }
+    indice === usuarioClaves.length - 1 ? (indice = 0) : indice++;
+    setTexto(usuario[usuarioClaves[indice]]);
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      cambiarDatos();
+    }, 1000);
+  }, [texto]);
 
   return (
     <>
       <h3>{texto}</h3>
-      <button onClick={cambiarDatos}>nombre, apellido, edad</button>
+      {/* <button onClick={cambiarDatos}>{usuarioClaves[indice + 1]}</button> */}
     </>
   );
 };
