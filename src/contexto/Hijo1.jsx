@@ -5,6 +5,8 @@ import Hijo2 from "./Hijo2";
 const Hijo1 = () => {
   const { numero, dato } = useContext(ContextoComision);
 
+  console.log(numero, dato);
+
   return (
     <>
       <h1>1</h1>

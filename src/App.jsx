@@ -1,7 +1,10 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Banner from "./Banner/Banner";
+import Title from "./Banner/components/Title";
 import Card from "./card/Card";
 import Contexto from "./contexto/Contexto";
+import Hijo1 from "./contexto/Hijo1";
 import Correcciones from "./correcciones/Correcciones";
 import CustomHooks from "./customhooks/CustomHooks";
 import Efectos from "./efectos/Efectos";
@@ -26,6 +29,8 @@ const App = () => {
         <Route path="/llamadas2" element={<Llamadas2 />} />
         <Route path="/props" element={<ComponenteA />} />
         <Route path="/todo" element={<ToDo />} />
+        <Route path="/banner" element={<Banner />} />
+        <Route path="/title" element={<Title />} />
       </Routes>
     </BrowserRouter>
   );
