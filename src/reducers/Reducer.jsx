@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useReducer } from "react";
 
 // Los Reducers son funciones puras que reciben el estado actual de la aplicación y la acción a realizar y devuelven un nuevo estado, sin modificar directamente el estado actual.
 
@@ -6,6 +6,39 @@ import React from "react";
 
 // una acción es un objeto que tiene una propiedad type que indica el tipo de acción a realizar y puede tener otras propiedades que contengan datos adicionales.
 
+/* 
+
+  action = {
+    type: string,
+    payload?: any | any[]
+  }
+
+*/
+/* 
+
+const reducer = (state, action) => {
+
+  switch (action.type) {
+    
+    case "increment":
+      return {
+        ...state,
+        value: state.value + 1,
+      };
+
+    default:
+      return state;
+  }
+
+};
+
+ */
+
+/* 
+
+const initialState = {};
+
+ */
 const Reducer = () => {
   return <div>Reducer</div>;
 };

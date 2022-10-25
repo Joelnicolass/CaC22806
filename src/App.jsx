@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AuthProvider from "./auth/AuthProvider";
 import Banner from "./Banner/Banner";
 import Title from "./Banner/components/Title";
 import Card from "./card/Card";
@@ -19,21 +20,10 @@ import PiedraPapelTijera from "./ppt/PiedraPapelTijera";
 import PiedraPapelTijeraV2 from "./ppt/PiedraPapelTijeraV2";
 import Promesas from "./promesas/Promesas";
 import ComponenteA from "./props/ComponenteA";
+import AppRoutes from "./routes/App.routes";
 
 const App = () => {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Contexto />} />
-        <Route path="/llamadas" element={<Llamadas />} />
-        <Route path="/llamadas2" element={<Llamadas2 />} />
-        <Route path="/props" element={<ComponenteA />} />
-        <Route path="/todo" element={<ToDo />} />
-        <Route path="/banner" element={<Banner />} />
-        <Route path="/title" element={<Title />} />
-      </Routes>
-    </BrowserRouter>
-  );
+  return <AppRoutes />;
 };
 
 export default App;
