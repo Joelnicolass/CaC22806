@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 import { Navigate } from "react-router-dom";
-import { AuthContext } from "../auth/AuthContext";
+import { AuthContextV2 } from "../authConReducer/context/AuthContextV2";
 
 const ProtectedRoutes = ({ children, url }) => {
-  const { isAuth } = useContext(AuthContext);
+  const { isAuth } = useContext(AuthContextV2);
 
   if (isAuth) {
     return children;

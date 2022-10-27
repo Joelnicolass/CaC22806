@@ -1,10 +1,13 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../auth/AuthContext";
+import { AuthContextV2 } from "../authConReducer/context/AuthContextV2";
+import { useAuth } from "../authConReducer/context/AuthProviderV2";
+import { TYPES } from "../authConReducer/reducers/authReducer";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { setUser: setUsername, setIsAuth } = useContext(AuthContext);
+  const { dispatch } = useContext(AuthContextV2);
 
   const [user, setUser] = useState({
     email: "",
@@ -23,14 +26,17 @@ const Login = () => {
     e.preventDefault();
 
     const { email } = user;
-    const userLogged = {
-      id: Date.now(),
-      token: "123456",
-      username: email,
+
+    const data = {
+      user: {
+        username: "Nico",
+        email: email,
+      },
+      token: "12gdfg34567dfgdf890",
     };
 
-    setUsername(userLogged);
-    setIsAuth(true);
+    //si todo sale bien, se ejecuta el dispatch
+    dispatch({ type: TYPES.LOGIN, payload: data });
 
     navigate("/home", {
       replace: true,
